@@ -25,6 +25,40 @@ Proceeding to the third task, I focused on the GPS component. After soldering he
 
 For the software aspect of this task, I initially attempted to use a library but was unsuccessful. As a result, I developed my own functions to achieve the desired objectives for this component. I created a custom function to parse the NMEA sentence received from the GPS, successfully extracting latitude and longitude data, along with their respective degrees and directions. While additional information such as speed and altitude could have been utilized, they were not pertinent to my project goals. Nevertheless, such supplementary data offer numerous possibilities for enhancing my product in the future.
 
+![Solenoid-Schematic ](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/3f3331a9-e305-403c-90bd-ca87cb5252e6)
+Figure 4: Solenoid Schematic
+
+The final task entailed implementing the solenoid, which, in contrast to the previous task, involved more complex hardware than software. For the software, all that was required was specifying the output port and applying logic to set the port high and low. The hardware, on the other hand, demanded greater effort because the component required at least 9 volts to be powered, necessitating the use of the Vin port on my ATmega328P.
+
+I employed a TIP120 MOSFET, a 1N4001 diode, and a 2.2K resistor to regulate the current and power flowing in and out of the component, ensuring that the rest of the circuit, which had a maximum of 5 volts, was not affected. The schematic above was provided by Adafruit, the company from which I purchased both the solenoid and GPS components. Figures 5 and 6 showcase the software flow diagram and the complete schematic of my project.
+
+![Software-Flow-Diagram](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/8d496584-fd7f-434d-916f-35170de90ae4)
+Figure 5: Software Flow Diagram
+
+![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/205133ae-bf06-4b6c-860d-6b3ee9fd8926)
+Figure 6: Schematic of Project
+
+## Experimental Methods
+Testing user interface components, such as the LCD, RPG, and pushbutton, was relatively simple and easy to verify. As anticipated, new components like the GPS and solenoid required more time and effort for verification and handling. To test the GPS, I employed the serial monitor input USART, which enabled me to examine my logic without needing to go outside and wait for the component to acquire a fix and provide data. This approach allowed me to debug my logic efficiently, resolve minor bugs, and identify other issues without wasting time outdoors. The figure below displays successful results from the serial monitor.
+
+![Monitor](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/ce96a687-0991-4d17-ab2d-28b1bb6cfa6a)
+Figure 7: Testing using Serial Monitor
+
+While implementing and testing the solenoid, I decided to construct it on a separate
+breadboard and test it individually. Considering that the solenoid requires up to 12 volts with a minimum of 9 volts, and the rest of the circuit operates at a maximum of 5 volts, I adopted this approach to avoid damaging components and to facilitate debugging potential issues. To evaluate the board, I developed a simple Arduino program that locked and unlocked the solenoid every two seconds. The figures below depict the successful testing of the solenoid and the code utilized.
+
+![Solenoid](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/237f7c18-a4b2-4fab-8f4a-ed60503894cb)
+Figure 8: Testing Solenoid
+
+![Arduino-code](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/ebdec85f-5792-48f1-9744-00902ba00feb)
+Figure 9: Arduino code for Solenoid testing
+
+After successfully implementing and testing the solenoid, I integrated it and its associated
+components into the main circuit and incorporated the relevant code into the primary C program. With these steps completed, it was time to initiate the final tests, incorporating all components and code.
+
+## Results
+The figures show in the image file demonstrate the successful operation of setting the destination to the Seamans Center, securing the box, arriving at the correct location, and unlocking the box.
+
 ## Discussion of Results
 I successfully achieved all the goals I set for this project, and the performance exceeded my expectations. Initially, I considered implementing a keypad function, but it seemed unnecessary and excessive for the project's intended purpose. My current limitations involved mobility, as it was challenging to transport and test my project. To enhance this project, I would first address the need for a more efficient power source.
 
