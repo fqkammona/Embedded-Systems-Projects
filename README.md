@@ -11,3 +11,4 @@ In this lab, I honed my skills in C-based programming for AVR microcontrollers a
 [Read More](https://github.com/fqkammona/Embedded-Systems-Projects/tree/main/Lab-SignalLogging)
 
 ## Stopwatch
+In this lab, we engineered and coded a timer using two 7-segment LED displays, shift registers, pushbuttons, and an Arduino Uno, employing hardware debounce techniques and Assembly language to program the ATmega328P microcontroller. The project aimed to meet specific conditions laid out for the timer's functionality. [Read More](https://github.com/fqkammona/Embedded-Systems-Projects/tree/main/Lab-Stopwatch#readme)
