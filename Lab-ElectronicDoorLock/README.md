@@ -2,7 +2,8 @@
 For this lab we are tasked with creating a simple electronic door lock system using a seven-segment LED display (5161AS), shift register (SN74HC595), rotary pulse generator (RPG-Panasonic EVE-GA1F2012B Encoder), pushbutton switch, and Arduino Uno (ATmega328p). We used a hardware debounce and Assembly language to program the microcontroller to satisfy all provided conditions. 
 
 ## Schematic 
-![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/bab29c0e-8de8-4bd3-9eaa-ae021cf585c4)
+![Lab-ElectronicDoorLock-Figure%201-Schematic.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-ElectronicDoorLock-Figure%201-Schematic.png)
+
 
 Figure 1: Lab 3 Circuit Diagram
 
@@ -93,7 +94,8 @@ Now that we know the time constant, we can calculate the rise time by multiplyin
 
 These rise times allow for the microcontroller to accurately identify when the button is pressed. FIGURE 4 shows the signal read from the button with the debounce.
 
-![Debounce](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/9257129e-1838-462d-8b62-8f8a3fd5fc5c)
+![Lab-ElectronicDoorLock-Figure4-Debounce.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-ElectronicDoorLock-Figure4-Debounce.png)
+
 
 The debounce for the RPG works the same way. For our capacitor value, we chose 0.01μF capacitors and used 10kΩ resistors. This hardware debounce was used for both channels on the RPG. When the channel is closed, the RPG sees a resistance of 10kΩ. We can then calculate the time constant for this: 
 `τ=R1*C`
@@ -113,13 +115,14 @@ Now we can calculate the rise time:
 
 This is the time it takes for the microcontroller to recognize the turn has been completed. FIGURES 5 AND 6 show the clockwise and counterclockwise turns of the RPG.
 
-![RPGturnOn](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/18d3dc47-fcb0-4929-a685-49214b9c52fc)
+![Lab-ElectronicDoorLock-Figure5-RPGturnOn.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-ElectronicDoorLock-Figure5-RPGturnOn.png)
 
-Figure 4: RPG Clockwise Turn on Oscilloscope
 
-![RPGCounterclockwise](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/c8776c0e-f462-490c-89a6-469338ac9ebe)
+Figure 5: RPG Clockwise Turn on Oscilloscope
 
-Figure 5: RPG Counterclockwise Turn on Oscilloscope
+![Lab-ElectronicDoorLock-Figure6-RPGCounterclockwise.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-ElectronicDoorLock-Figure6-RPGCounterclockwise.png)
+
+Figure 6: RPG Counterclockwise Turn on Oscilloscope
 
 ### Timer
 The timer was the most challenging part of the lab to understand. Once implemented, though, it was a very valuable resource. For this lab we needed delays of two seconds, five seconds, and nine seconds. To achieve these delays, we decided to create a simple delay of 100ms and then loop through this delay any number of times in order to achieve the needed delay. To calculate what value needed to be loaded into TCCR0B, we needed to determine a pre-scaler value and use that to calculate the correct starting value. Given that our microcontroller uses a 16MHz clock, we knew that we needed to have a pre-scaler value of 3. This gives us a tMAX of:
