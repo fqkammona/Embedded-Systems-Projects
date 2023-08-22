@@ -18,7 +18,9 @@ For the code, I decided to use the USART, Universal Synchronous and Asynchronous
 | ---------- | -------------------- |
 | Equation for Calculating UBR Value  | UBR = (Fclk / (BAUD * 16)) - 1 |
 
-![USART-block-diagram](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/2b884f2d-85ac-47fe-830a-75ec9f36dfd6)
+![USART-block-diagram](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure2-USART-block-diagram.png)
+
+https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure2-USART-block-diagram.png?raw=true![image](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/5eb5b33a-d1b3-46b0-bbff-d279b8db5c4b)
 
 
 Figure Two: USART block diagram
