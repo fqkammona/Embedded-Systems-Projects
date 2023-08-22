@@ -6,7 +6,8 @@ My microcontroller has an RS232 interface that is connected to my computer, allo
 ## Schematic 
 The figure below shows the connections between the microcontroller and the MAX518. As shown in the schematic I used two pull-up resistors that were 4.7k ohms. 
 
-![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/6d616839-c68a-446e-97c9-d7879c7093a0)
+![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/40caecfc-08a9-4f17-8caf-b44b849588d5)
+
 
 Figure One: Microcontroller and MAX518 connections
 
@@ -17,7 +18,8 @@ For the code, I decided to use the USART, Universal Synchronous and Asynchronous
 | ---------- | -------------------- |
 | Equation for Calculating UBR Value  | UBR = (Fclk / (BAUD * 16)) - 1 |
 
-![USART-block-diagram](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/89e640ee-1293-4934-9a51-64618009e8ce)
+![USART-block-diagram](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/2b884f2d-85ac-47fe-830a-75ec9f36dfd6)
+
 
 Figure Two: USART block diagram
 
