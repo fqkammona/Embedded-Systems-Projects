@@ -2,7 +2,8 @@
 In this lab, our task was to design, build, and code a timer using two 7-segment LED displays (5161AS), two shift registers (SN74HC595), two pushbuttons, and an Arduino Uno. We used hardware debounce and Assembly language to program the ATmega328p microcontroller to satisfy the provided conditions. 
 
 ## Schematic  
-![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/e000169a-b5ba-4a72-ad86-97c69dd76db6)
+![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/e4ddc35a-c87b-4076-b640-9ceae12d09a0)
+
 
 Figure 1 shows the circuit designed for this lab. The microcontroller collects inputs from both pushbuttons and sends three signals (Serial Input, Shift Register Clock, and Register Clock) to the first SN74HC595 shift register and two signals (Shift Register Clock and Register Clock) to the second SN74HC595 shift register. The first shift register (shown on the left) is connected to the first 7-segment display (shown on the left) using the required 1kΩ current limiting resistance. The shift registers’ outputs, labeled QA-QH are connected to the 7-segment display matching the corresponding pins on the 7-segment display. The second SN74HC595 (shown on the right) receives its’ serial input from the first shift registers’ QH’ output. The second SN74HC595 is otherwise connected to the microcontroller and the second 7-segment display (shown on the left) is the same as the first. For this lab, we implanted a hardware debounce for the two pushbuttons using two resistors (100k and 10k) and a 0.1μF capacitor. The circuit is connected to a 5V power source and is complete with a 0.1pF decoupling capacitor. 
 
@@ -58,7 +59,8 @@ Now that we know the time constant, we can calculate the rise time by multiplyin
 
 These rise times allow for the microcontroller to accurately identify when the button is pressed. 
 
-![Oscilloscope](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/e75973b6-d162-49c5-be51-ca0a171667ec)
+![Oscilloscope](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/ea68ae83-2d9f-48f5-8092-9c61965367a6)
+
 Figure 3: Oscilloscope Reading of Button Debounce
 
 ### 7-segment Displays
