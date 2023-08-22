@@ -6,7 +6,7 @@ My microcontroller has an RS232 interface that is connected to my computer, allo
 ## Schematic 
 The figure below shows the connections between the microcontroller and the MAX518. As shown in the schematic I used two pull-up resistors that were 4.7k ohms. 
 
-![Schematic](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/40caecfc-08a9-4f17-8caf-b44b849588d5)
+![Lab-SignalLogging-Figure1-Schematic.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure1-Schematic.png)
 
 
 Figure One: Microcontroller and MAX518 connections
@@ -18,10 +18,7 @@ For the code, I decided to use the USART, Universal Synchronous and Asynchronous
 | ---------- | -------------------- |
 | Equation for Calculating UBR Value  | UBR = (Fclk / (BAUD * 16)) - 1 |
 
-![USART-block-diagram](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure2-USART-block-diagram.png)
-
-https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure2-USART-block-diagram.png?raw=true![image](https://github.com/fqkammona/Embedded-Systems-Projects/assets/109518919/5eb5b33a-d1b3-46b0-bbff-d279b8db5c4b)
-
+![Lab-SignalLogging-Figure2-USART-block-diagram.png](https://github.com/fqkammona/Embedded-Systems-Projects/blob/main/Lab-Images/Lab-SignalLogging-Figure2-USART-block-diagram.png)
 
 Figure Two: USART block diagram
 
